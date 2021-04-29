@@ -13,13 +13,13 @@
 <script>
     var app = new Vue({
         el: '#app',
-        data () {
+        data: () {
             return {
                 message: 'Hello World!'
             }
         },
-        beforeCreate () {
-            //outputnya undefined, karena properties message belum diinisialisasi oleh Vue
+        created () {
+            //outputnya Hello  World!, karena instance sudah dijalankan oleh Vue
             console.log(this.message)
         }
     });
