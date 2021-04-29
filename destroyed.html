@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Belajar Hooks Destroyed Semua Event, Action dan Directive tidak akan terikat lagi</title>
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data () {
+                    return {
+                        message: 'Hello World!'
+                    }
+                },
+                destroyed() {
+                    this.$destroy()
+                    console.log(this)
+                }
+            });
+        </script>
+    </body>
+</html>
