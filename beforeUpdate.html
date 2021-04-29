@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Belajar Lifecycle beforeUpdate Hooks</title>
+    </head>
+<body>
+
+    <div id="app">
+        <h1 ref="h1-element">{{ message }}</h1>
+        <button @click="message = 'Message is updated';">Ubah Message</button>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data () {
+            return {
+                message: 'Hello World!'
+            }
+        },
+        beforeUpdate: function() {
+            //ketika klik button Ubah Message hasilnya adalah: Hello World!
+            console.log(this.$refs["h1-element"].textContent)
+        }
+    });
+</script>
+</body>
+</html>
